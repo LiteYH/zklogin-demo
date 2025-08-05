@@ -62,12 +62,22 @@ function App() {
   }, []);
 
  return (
-    <div style={{ padding: 40 }}>
-      <h1>zkLogin with Google</h1>
-      <button onClick={startLogin}>Login with Google</button>
-      <p style={{ marginTop: "20px" }}>
-        Your zkLogin Address: <strong>{zkAddress}</strong>
-      </p>
+    <div className="min-h-screen bg-[#0a192f] flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-[#112240] rounded-xl p-8 shadow-2xl border border-[#233554] shadow-[#1E90FF]/10">
+        <h1 className="text-4xl font-bold mb-8 text-[#64ffda] text-center">zkLogin with Google</h1>
+        <button 
+          onClick={startLogin}
+          className="w-full bg-[#1E90FF] hover:bg-[#1E90FF]/80 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-[#1E90FF]/30 hover:shadow-[#1E90FF]/50 mb-6"
+        >
+          Login with Google
+        </button>
+        <div className="text-[#8892b0] text-center">
+          <p className="mb-2">Your zkLogin Address:</p>
+          <p className="font-mono text-sm break-all bg-[#1a1e2e] p-4 rounded-lg border border-[#233554] text-[#64ffda]">
+            {zkAddress || "Not connected"}
+          </p>
+        </div>
+      </div>
     </div>
   );
 
